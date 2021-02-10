@@ -1,0 +1,124 @@
+/* ==========================================================================
+   exercice grid corrige / component
+   ========================================================================== */
+
+.main-grid {
+    --ex-grid-gap: 20px;
+
+    display: grid;
+    gap: 10px;
+    height: 100vh;
+    grid-template-rows: 100px 1fr 60px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+        'header    header    header'
+        'content   content   sidebar'
+        'footer    footer    footer';
+
+    @media (max-width: $breakpoint-sm) {
+        grid-template-areas:
+            'header    header    header'
+            'content   content   content'
+            'sidebar   sidebar   sidebar'
+            'footer    footer    footer';
+    }
+}
+
+.header,
+.content,
+.footer {
+    padding: 0 var(--ex-grid-gap);
+}
+.header {
+    grid-area: header;
+
+    .wrapper {
+        display: flex;
+        justify-content: flex-end;
+    }
+}
+.content {
+    grid-area: content;
+
+    section + section {
+        margin-top: 60px;
+    }
+}
+.sidebar {
+    grid-area: sidebar;
+}
+.footer {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    grid-area: footer;
+    padding: var(--ex-grid-gap);
+
+    .wrapper {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.menu ul {
+    display: flex;
+    list-style: none;
+
+    li + li {
+        margin-left: 1rem;
+    }
+}
+
+.menu__item {
+    border: 2px solid var(--color-primary);
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+.grid1 {
+    display: grid;
+    gap: var(--ex-grid-gap);
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid2 {
+    display: grid;
+    gap: var(--ex-grid-gap);
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+
+    .card1 {
+        grid-column: span 2;
+    }
+    .card4 {
+        grid-row: span 2;
+    }
+}
+
+.grid3 {
+    display: grid;
+    gap: var(--ex-grid-gap);
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+
+    img {
+        height: 300px;
+        object-fit: cover;
+        width: 100%;
+    }
+    img:nth-child(1),
+    img:nth-child(4) {
+        grid-column: span 2;
+    }
+}
+
+.sidebar img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+.card {
+    background: var(--color-white);
+    border-radius: 10px;
+    color: var(--color-primary);
+    padding: 20px;
+}
