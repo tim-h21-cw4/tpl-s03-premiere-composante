@@ -1,18 +1,4 @@
-# Semaine 03 - Exercice 01 - Importation
-
-Lorem ipsum carousel
-<br><br>
-
-## **Consigne de l'exercice**
-
-<br>
-
-### STRUCTURE DE BASE
-
-- Lorem étape 1
-  <br><br>
-
-# Bravo vous avez maintenant complété la composante carousel pour votre TP1
+# Exercice 01 - Importation
 
 <br><br>
 
@@ -31,4 +17,3 @@ Afin de démarrer le stack de développement, utilisez les commandes suivantes d
 | Commandes disponibles | Description                                                                                                 |
 | :-------------------- | :---------------------------------------------------------------------------------------------------------- |
 | `npm start`           | Génère un environnement de développement, démarre un serveur web et va attendre des changements de fichiers |
-| `npm build`           | Compile production code                                                                                     |
